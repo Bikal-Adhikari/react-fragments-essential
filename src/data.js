@@ -1,75 +1,78 @@
-import componentsImg from './assets/components.png';
-import propsImg from './assets/config.png';
-import jsxImg from './assets/jsx-ui.png';
-import stateImg from './assets/state-mgmt.png';
+import componentsImg from "./assets/components.png";
+import propsImg from "./assets/config.png";
+import jsxImg from "./assets/jsx-ui.png";
+import stateImg from "./assets/state-mgmt.png";
 
 export const CORE_CONCEPTS = [
   {
     image: componentsImg,
-    title: 'Components',
+    title: "Components",
     description:
-      'The core UI building block - compose the user interface by combining multiple components.',
+      "The fundamental building blocks of the user interface, allowing for the assembly of various UI elements into cohesive structures.",
   },
   {
     image: jsxImg,
-    title: 'JSX',
+    title: "JSX",
     description:
-      'Return (potentially dynamic) HTML(ish) code to define the actual markup that will be rendered.',
+      "Generates HTML-like syntax, facilitating the creation of dynamic markup that dictates the appearance and behavior of components.",
   },
   {
     image: propsImg,
-    title: 'Props',
+    title: "Props",
     description:
-      'Make components configurable (and therefore reusable) by passing input data to them.',
+      "Enable the customization and reusability of components by passing data inputs to them, shaping their appearance and behavior.",
   },
   {
     image: stateImg,
-    title: 'State',
+    title: "State",
     description:
-      'React-managed data which, when changed, causes the component to re-render & the UI to update.',
+      "Represents React-managed data within components, triggering re-renders and UI updates upon modification, ensuring real-time synchronization.",
   },
 ];
 
 export const EXAMPLES = {
   components: {
-    title: 'Components',
+    title: "Components",
     description:
-      'Components are the building blocks of React applications. A component is a self-contained module (HTML + optional CSS + JS) that renders some output.',
+      "Components serve as the cornerstone of React applications, encapsulating self-contained modules comprising HTML, optional CSS, and JavaScript, to render desired output.",
     code: `
-function Welcome() {
+const Welcome = () => {
   return <h1>Hello, World!</h1>;
-}`,
+};`,
   },
   jsx: {
-    title: 'JSX',
+    title: "JSX",
     description:
-      'JSX is a syntax extension to JavaScript. It is similar to a template language, but it has full power of JavaScript (e.g., it may output dynamic content).',
+      "JSX, a JavaScript syntax extension, combines the power of JavaScript with a template-like structure, facilitating dynamic content rendering within React components.",
     code: `
-<div>
-  <h1>Welcome {userName}</h1>
-  <p>Time to learn React!</p>
-</div>`,
+const userName = "John";
+return (
+  <div>
+    <h1>Welcome {userName}</h1>
+    <p>Time to learn React!</p>
+  </div>
+);`,
   },
   props: {
-    title: 'Props',
+    title: "Props",
     description:
-      'Components accept arbitrary inputs called props. They are like function arguments.',
+      "Props, short for properties, serve as arbitrary inputs accepted by components, analogous to function arguments, enabling dynamic customization and reusability.",
     code: `
-function Welcome(props) {
+const Welcome = (props) => {
   return <h1>Hello, {props.name}</h1>;
-}`,
+};`,
   },
   state: {
-    title: 'State',
+    title: "State",
     description:
-      'State allows React components to change their output over time in response to user actions, network responses, and anything else.',
+      "State empowers React components to adapt their output over time, responding to user interactions, network requests, and various stimuli, ensuring dynamic user experiences.",
     code: `
-function Counter() {
+const Counter = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  function handleClick() {
+  const handleClick = () => {
     setIsVisible(true);
-  }
+  };
 
   return (
     <div>
@@ -77,6 +80,6 @@ function Counter() {
       {isVisible && <p>Amazing details!</p>}
     </div>
   );
-}`,
+};`,
   },
 };
