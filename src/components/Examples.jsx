@@ -20,8 +20,8 @@ export const Examples = () => {
       <div id="tab-content">
         <h3>{EXAMPLES[selectedTopic].title}</h3>
         <p>{EXAMPLES[selectedTopic].description}</p>
-        <pre>
-          <code>{EXAMPLES[selectedTopic].code}</code>
+        <pre className="code-snippet">
+          <code>{EXAMPLES[selectedTopic].code.trim()}</code>
         </pre>
       </div>
     );
